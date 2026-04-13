@@ -65,20 +65,20 @@ public class MedicoController {
     }
 
     //AQUI ESTOU EXCLUINDO MESMO
-    @DeleteMapping("/(id)")
-    @Transactional // SPRING DATA JPA - Informa para o Springboot que o método abaixo é uma transação, ou seja, que as operações realizadas dentro do método devem ser tratadas como uma única unidade de trabalho, garantindo a integridade dos dados e a consistência do banco de dados.
+    @DeleteMapping("/{id}")
+   @Transactional // SPRING DATA JPA - Informa para o Springboot que o método abaixo é uma transação, ou seja, que as operações realizadas dentro do método devem ser tratadas como uma única unidade de trabalho, garantindo a integridade dos dados e a consistência do banco de dados.
     public void excluir(@PathVariable Integer id){//@PathVariable é uma anotação do Spring que indica que o valor do parâmetro id deve ser extraído da URL da requisição. 
-    // Por exemplo, se a requisição for DELETE /medicos/5, o valor 5 será atribuído ao parâmetro id.
-            repository.getReferenceById(id);
-    }
+    //Por exemplo, se a requisição for DELETE /medicos/5, o valor 5 será atribuído ao parâmetro id.
+           repository.deleteById(id);
+   }
 
     //Exclusão lógica - Uma regra de negocio que permite que um registro seja "excluido" sem ser apagado do banco de dados
-    @DeleteMapping("/(id)")
-    @Transactional // SPRING DATA JPA - Informa para o Springboot que o método abaixo é uma transação, ou seja, que as operações realizadas dentro do método devem ser tratadas como uma única unidade de trabalho, garantindo a integridade dos dados e a consistência do banco de dados.
-    public void alterarStatus(@PathVariable Integer id){
-        var medico = repository.getReferenceById(id);
-        medico.exclusaoLogica();
-    }
+    // @DeleteMapping("/{id}")
+    // @Transactional // SPRING DATA JPA - Informa para o Springboot que o método abaixo é uma transação, ou seja, que as operações realizadas dentro do método devem ser tratadas como uma única unidade de trabalho, garantindo a integridade dos dados e a consistência do banco de dados.
+    // public void alterarStatus(@PathVariable Integer id){
+    //     var medico = repository.getReferenceById(id);
+    //     medico.exclusaoLogica();
+    // }
 
 
 }
