@@ -1,5 +1,8 @@
 package com.github.app.model.consulta;
 
-public class Status {
-    
+public enum Status {
+    AGENDADA,
+    CONFIRMADA,
+    CANCELADA,
+    REALIZADA;
 }
