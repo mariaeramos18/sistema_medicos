@@ -34,4 +34,20 @@ public class Paciente {
         this.telefone = dados.telefone();
     }
 
+    //Método para verificar a atualização do paciente, recebendo um objeto do tipo DadosAtualizacaoPaciente e atualizando os atributos do paciente com os dados recebidos na requisição.
+    public void atualizarInformacoes(DadosAtualizacaoPaciente dados) {
+        if (dados.nome() != null) {
+            this.nome = dados.nome();
+        }
+        if (dados.cpf() != null) {
+            this.cpf = dados.cpf();
+        }
+        if (dados.email() != null) {
+            this.email = dados.email();
+        }
+        if (dados.telefone() != null) {
+            this.telefone = dados.telefone();
+        }
+    }
+
 }
