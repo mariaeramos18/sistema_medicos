@@ -7,9 +7,6 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.web.bind.annotation.*;
 
-import com.github.app.model.medico.DadosAtualizacaoMedico;
-import com.github.app.model.medico.DadosListagemMedico;
-import com.github.app.model.medico.Medico;
 import com.github.app.model.paciente.DadosAtualizacaoPaciente;
 import com.github.app.model.paciente.DadosCadastroPaciente;
 import com.github.app.model.paciente.DadosListagemPaciente;
